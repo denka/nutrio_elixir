@@ -27,8 +27,8 @@ defmodule NutrioElixir.UserMealRatingController do
     meal_id = String.to_integer(meal_id)
     val = Decimal.new(value)
     user = Repo.get(NutrioElixir.User, 7404337)
-    user_meal_rating = %UserMealRating{user_id: user.user_id, meal_id: meal_id, value: val, cobrand_id: user.cobrand_id}
-    user_meal_rating = Repo.insert(user_meal_rating)
+    user_meal_rating = %UserMealRating{user_id: user.user_id, meal_id: meal_id, value: val, cobrand_id: user.cobrand_id, approved: true}
+    Repo.insert(user_meal_rating)
     render conn, "show.json", user_meal_rating: user_meal_rating
   end
 
