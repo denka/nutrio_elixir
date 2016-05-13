@@ -2,7 +2,7 @@ defmodule NutrioElixir.UserMealRating do
   use Ecto.Model
   import Ecto.Changeset
 
-  @primary_key {:rating_id, :integer, []}
+  @primary_key {:rating_id, :id, autogenerate: true}
   @derive {Poison.Encoder, only: [:rating_id, :meal_id, :value]}
   schema "ic_meal_rating_user" do
     field :meal_id, :integer
