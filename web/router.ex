@@ -23,9 +23,4 @@ defmodule NutrioElixir.Router do
     pipe_through :api
     resources "/user_meal_ratings", UserMealRatingController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", NutrioElixir do
-  #   pipe_through :api
-  # end
 end
